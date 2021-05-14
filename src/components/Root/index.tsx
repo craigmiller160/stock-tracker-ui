@@ -3,6 +3,7 @@ import StockNavbar from './StockNavbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { loadAuthUser } from '../../store/auth/actions';
+import Content from './Content';
 
 const Root = (): JSX.Element => {
 	const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const Root = (): JSX.Element => {
 	return (
 		<div>
 			<StockNavbar />
-			{hasChecked && <h1>Content</h1>}
+			{hasChecked && <Content />}
 		</div>
 	);
 };
