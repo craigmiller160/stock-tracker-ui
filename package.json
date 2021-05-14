@@ -16,6 +16,7 @@
   "devDependencies": {
     "@craigmiller160/es-lint-config": "^1.1.0-beta",
     "@craigmiller160/react-web-config": "^2.11.0-beta",
+    "@jedmao/redux-mock-store": "^3.0.5",
     "@relmify/jest-fp-ts": "^1.1.1",
     "@testing-library/jest-dom": "^5.12.0",
     "@types/react": "^17.0.5",
