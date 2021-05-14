@@ -3,3 +3,7 @@
 *.iml
 target
 *.class
+node_modules
+yarn-error.log
+.yalc
+yalc.lock
