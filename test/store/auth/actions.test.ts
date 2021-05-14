@@ -36,7 +36,7 @@ describe('auth actions', () => {
 
 		it('fail', async () => {
 			store.dispatch(authSlice.actions.setUserData(O.some(authUser)));
-			getAuthUserMock.mockImplementation(() => TE.left(new Error));
+			getAuthUserMock.mockImplementation(() => TE.left(new Error()));
 			await store.dispatch<any>(loadAuthUser());
 			expect(store.getState().auth.userData).toBeNone();
 		});
