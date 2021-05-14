@@ -6,7 +6,7 @@ import { Navbar } from '@craigmiller160/react-material-ui-common';
 
 const StockNavbar = (): JSX.Element => {
 	const isAuth = useSelector(isAuthorized);
-	const hasChecked = useSelector<RootState>((state) => state.auth.hasChecked);
+	const hasChecked = useSelector<RootState,boolean>((state) => state.auth.hasChecked);
 
 	return (
 		<Navbar
