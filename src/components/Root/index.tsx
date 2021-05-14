@@ -1,5 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import StockNavbar from './StockNavbar';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import { loadAuthUser } from '../../store/auth/actions';
 
-const Root = (): JSX.Element => <h1>Root</h1>;
+const Root = (): JSX.Element => {
+    const dispatch = useDispatch();
+    const hasChecked = useSelector((state: RootState) => state.auth.hasChecked);
+    useEffect(() => {
+        dispatch(loadAuthUser());
+    }, [dispatch]);
+
+    return (
+        <div>
+            <StockNavbar />
+            {hasChecked && <h1>Content</h1>}
+        </div>
+    )
+}
 
 export default Root;
