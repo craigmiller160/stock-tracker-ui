@@ -30,6 +30,7 @@ describe('auth actions', () => {
 	describe('loadAuthUser', () => {
 		it('success', async () => {
 			getAuthUserMock.mockImplementation(() => TE.right(authUser));
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			await store.dispatch<any>(loadAuthUser());
 			expect(store.getState().auth.userData).toEqualSome(authUser);
 		});
@@ -37,6 +38,7 @@ describe('auth actions', () => {
 		it('fail', async () => {
 			store.dispatch(authSlice.actions.setUserData(O.some(authUser)));
 			getAuthUserMock.mockImplementation(() => TE.left(new Error()));
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			await store.dispatch<any>(loadAuthUser());
 			expect(store.getState().auth.userData).toBeNone();
 		});
