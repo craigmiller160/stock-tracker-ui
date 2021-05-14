@@ -1,4 +1,6 @@
-import authSlice, { initialState as authInitState } from '../../../src/store/auth/slice';
+import authSlice, {
+	initialState as authInitState
+} from '../../../src/store/auth/slice';
 import { AuthUser } from '../../../src/types/auth';
 import * as O from 'fp-ts/es6/Option';
 
