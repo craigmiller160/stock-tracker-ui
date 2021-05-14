@@ -10,7 +10,9 @@ const rootReducer = combineReducers({
 
 export type RootState = ReturnType<typeof rootReducer>;
 
-export default configureStore({
+export const createStore = () => configureStore({
 	reducer: rootReducer,
 	devTools: process.env.NODE_ENV !== 'production'
 });
+
+export default createStore();
