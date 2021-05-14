@@ -1,3 +1,4 @@
+const path = require('path');
 
 module.exports = {
     title: 'Stock Tracker',
@@ -14,5 +15,8 @@ module.exports = {
             },
             logLevel: 'debug'
         }
-    }
+    },
+    jestSetupFiles: [
+        path.resolve(process.cwd(), 'test/setupTests.ts')
+    ]
 };
