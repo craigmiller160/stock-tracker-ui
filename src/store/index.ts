@@ -4,7 +4,7 @@ import authSlice from './auth/slice';
 import { configureStore } from '@reduxjs/toolkit';
 
 const rootReducer = combineReducers({
-	alert: reduxAlertReducer,
+	alert: reduxAlertReducer, // TODO need to add alert component
 	auth: authSlice.reducer
 });
 
