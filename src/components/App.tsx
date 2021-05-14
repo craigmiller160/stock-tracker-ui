@@ -7,13 +7,13 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './theme';
 
 const App = (): JSX.Element => (
-    <ReduxProvider store={ store }>
-        <BrowserRouter basename="/stock-tracker">
-            <ThemeProvider theme={ theme }>
-                <Root />
-            </ThemeProvider>
-        </BrowserRouter>
-    </ReduxProvider>
+	<ReduxProvider store={store}>
+		<BrowserRouter basename="/stock-tracker">
+			<ThemeProvider theme={theme}>
+				<Root />
+			</ThemeProvider>
+		</BrowserRouter>
+	</ReduxProvider>
 );
 
 export default App;
