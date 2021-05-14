@@ -1,6 +1,5 @@
-
 describe('StockNavbar', () => {
-    it('test', () => {
-        throw new Error();
-    })
-})
+	it('test', () => {
+		throw new Error();
+	});
+});

@@ -1,6 +1,5 @@
+import React from 'react';
 
-const StockNavbar = (): JSX.Element => {
+const Root = (): JSX.Element => <h1>Root</h1>;
 
-};
-
-export default StockNavbar;
+export default Root;

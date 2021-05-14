@@ -1,6 +1,5 @@
-
 describe('auth slice', () => {
-    it('test', () => {
-        throw new Error();
-    })
-})
+	it('test', () => {
+		throw new Error();
+	});
+});

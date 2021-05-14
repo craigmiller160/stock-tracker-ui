@@ -1,6 +1,5 @@
-
 describe('Root component', () => {
-    it('test', () => {
-        throw new Error();
-    });
+	it('test', () => {
+		throw new Error();
+	});
 });
