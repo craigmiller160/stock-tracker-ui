@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import App from './App';
-import { StrictMode } from 'react';
+import React, { StrictMode } from 'react';
 import './index.scss';
 
 ReactDOM.render(
