@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 
 export interface RenderConfig {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	component: ComponentType<any>;
 }
 
