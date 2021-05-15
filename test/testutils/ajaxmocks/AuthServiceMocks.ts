@@ -1,6 +1,12 @@
 import MockAdapter from 'axios-mock-adapter';
 import { simpleUser } from '../modelmocks/auth';
 
+const GET_AUTH_USER = '/stock-tracker/api/oauth/user';
+
 export const mockGetAuthUser = (api: MockAdapter) =>
-    api.onGet('/stock-tracker/api/oauth/user')
+    api.onGet(GET_AUTH_USER)
         .reply(200, simpleUser);
+
+export const mockFailGetAuthUser = (api: MockAdapter) =>
+    api.onGet(GET_AUTH_USER)
+        .reply(500);
