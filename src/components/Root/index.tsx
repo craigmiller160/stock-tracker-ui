@@ -13,12 +13,10 @@ const Root = (): JSX.Element => {
 		dispatch(loadAuthUser());
 	}, [dispatch]);
 
-	// TODO include spinner until auth is checked
-
 	return (
 		<div>
 			<StockNavbar />
-			<Spinner />
+			{!hasChecked && <Spinner />}
 			{hasChecked && <Content />}
 		</div>
 	);
