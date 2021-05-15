@@ -1,4 +1,3 @@
-import React from 'react';
 import renderComponent from '../../../testutils/rendering/renderComponent';
 import StockNavbar from '../../../../src/components/Root/StockNavbar';
 import * as O from 'fp-ts/es6/Option';
