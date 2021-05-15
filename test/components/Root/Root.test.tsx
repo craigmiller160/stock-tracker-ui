@@ -27,6 +27,7 @@ describe('Root component', () => {
 	it('renders after auth check', async () => {
 		mockGetAuthUser(mockAjaxApi);
 		await doRender();
+		expect(screen.queryByText('Stock Tracker')).toBeInTheDocument();
 		expect(screen.queryByText('Content')).toBeInTheDocument();
 	});
 });
