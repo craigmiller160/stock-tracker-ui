@@ -29,9 +29,9 @@ const renderComponent = async (config: RenderConfig): Promise<RenderResult> => {
 		)
 	);
 	return {
-	    store,
-        history
-    };
+		store,
+		history
+	};
 };
 
 export default renderComponent;

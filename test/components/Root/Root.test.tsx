@@ -11,7 +11,6 @@ const mockAjaxApi = new MockAdapter(ajaxApi.instance);
 describe('Root component', () => {
 	it('renders after auth check', async () => {
 		mockGetAuthUser(mockAjaxApi);
-		// await doRender();
 		await renderComponent({
 			component: Root
 		});
