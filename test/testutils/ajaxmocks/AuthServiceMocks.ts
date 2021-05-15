@@ -4,9 +4,7 @@ import { simpleUser } from '../modelmocks/auth';
 const GET_AUTH_USER = '/stock-tracker/api/oauth/user';
 
 export const mockGetAuthUser = (api: MockAdapter) =>
-    api.onGet(GET_AUTH_USER)
-        .reply(200, simpleUser);
+	api.onGet(GET_AUTH_USER).reply(200, simpleUser);
 
 export const mockFailGetAuthUser = (api: MockAdapter) =>
-    api.onGet(GET_AUTH_USER)
-        .reply(500);
+	api.onGet(GET_AUTH_USER).reply(500);

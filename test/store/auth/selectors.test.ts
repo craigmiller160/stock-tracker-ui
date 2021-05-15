@@ -1,7 +1,11 @@
 import authSlice from '../../../src/store/auth/slice';
 import * as O from 'fp-ts/es6/Option';
 import { isAuthorized } from '../../../src/store/auth/selectors';
-import { combineReducers, configureStore, EnhancedStore } from '@reduxjs/toolkit';
+import {
+	combineReducers,
+	configureStore,
+	EnhancedStore
+} from '@reduxjs/toolkit';
 import { simpleUser } from '../../testutils/modelmocks/auth';
 
 const rootReducer = combineReducers({

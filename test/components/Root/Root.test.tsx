@@ -14,13 +14,15 @@ const mockAjaxApi = new MockAdapter(ajaxApi.instance);
 const doRender = () => {
 	const store = createStore();
 	const history = createMemoryHistory();
-	return waitFor(() => render(
-		<Provider store={store}>
-			<Router history={history }>
-				<Root />
-			</Router>
-		</Provider>
-	));
+	return waitFor(() =>
+		render(
+			<Provider store={store}>
+				<Router history={history}>
+					<Root />
+				</Router>
+			</Provider>
+		)
+	);
 };
 
 describe('Root component', () => {

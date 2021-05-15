@@ -5,7 +5,10 @@ import * as O from 'fp-ts/es6/Option';
 import authSlice from '../../../src/store/auth/slice';
 import MockAdapter from 'axios-mock-adapter';
 import ajaxApi from '../../../src/services/AjaxApi';
-import { mockFailGetAuthUser, mockGetAuthUser } from '../../testutils/ajaxmocks/AuthServiceMocks';
+import {
+	mockFailGetAuthUser,
+	mockGetAuthUser
+} from '../../testutils/ajaxmocks/AuthServiceMocks';
 import { simpleUser } from '../../testutils/modelmocks/auth';
 
 const mockAjaxApi = new MockAdapter(ajaxApi.instance);

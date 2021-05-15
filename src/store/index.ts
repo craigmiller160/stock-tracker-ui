@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
 
 export type RootState = ReturnType<typeof rootReducer>;
 
-export const createStore = (): EnhancedStore =>
+export const createStore = (): EnhancedStore<RootState> =>
 	configureStore({
 		reducer: rootReducer,
 		devTools: process.env.NODE_ENV !== 'production'
