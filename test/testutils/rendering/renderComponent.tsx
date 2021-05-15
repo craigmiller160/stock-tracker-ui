@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { ComponentType } from 'react';
 import { createMemoryHistory, MemoryHistory } from 'history';
 import { createStore, RootState } from '../../../src/store';
 import { EnhancedStore } from '@reduxjs/toolkit';
@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 
 export interface RenderConfig {
-	component: Component;
+	component: ComponentType<any>;
 }
 
 export interface RenderResult {
