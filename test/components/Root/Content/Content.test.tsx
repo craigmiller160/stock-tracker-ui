@@ -8,7 +8,6 @@ describe('Content component', () => {
 			component: Content
 		});
 
-		expect(screen.queryByText('Content'))
-			.toBeInTheDocument();
+		expect(screen.queryByText('Content')).toBeInTheDocument();
 	});
 });

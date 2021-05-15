@@ -4,8 +4,27 @@ import StockNavbar from '../../../../src/components/Root/StockNavbar';
 import * as O from 'fp-ts/es6/Option';
 import { simpleUser } from '../../../testutils/modelmocks/auth';
 import { screen } from '@testing-library/react';
+import mediaQuery from 'css-mediaquery';
+
+// TODO make this re-usable
+const createMatchMedia = (width: number) => {
+	return (query: string): MediaQueryList => ({
+		matches: mediaQuery.match(query, { width }),
+		addEventListener: () => {},
+		removeEventListener: () => {},
+		media: '',
+		onchange: () => {},
+		addListener: () => {},
+		removeListener: () => {},
+		dispatchEvent: () => false
+	});
+};
 
 describe('StockNavbar', () => {
+	beforeEach(() => {
+		window.matchMedia = createMatchMedia(window.innerWidth);
+	});
+
 	it('renders correctly', async () => {
 		await renderComponent({
 			component: StockNavbar,
@@ -17,11 +36,7 @@ describe('StockNavbar', () => {
 			}
 		});
 
-		screen.debug(); // TODO delete this
-
-		expect(screen.queryByText('Stock Tracker'))
-			.toBeInTheDocument();
-		expect(screen.queryByText('Logout'))
-			.toBeInTheDocument();
+		expect(screen.queryByText('Stock Tracker')).toBeInTheDocument();
+		expect(screen.queryByText('Logout')).toBeInTheDocument();
 	});
 });
