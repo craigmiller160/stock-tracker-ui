@@ -7,10 +7,13 @@ import authSlice from './slice';
 import { getAuthUser } from '../../services/AuthService';
 import { AuthUser } from '../../types/auth';
 
+// Necessary because of IntelliJ limitations
+type PipeType = TE.TaskEither<Error, AuthUser>;
+
 export const loadAuthUser =
 	() =>
 	(dispatch: Dispatch): Promise<E.Either<Error, AuthUser>> =>
-		pipe(
+		pipe<PipeType,PipeType,PipeType>(
 			getAuthUser(),
 			TE.map((authUser) => {
 				dispatch(authSlice.actions.setUserData(O.some(authUser)));
