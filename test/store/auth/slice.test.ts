@@ -1,25 +1,16 @@
-import authSlice, {
-	initialState as authInitState
-} from '../../../src/store/auth/slice';
-import { AuthUser } from '../../../src/types/auth';
+import authSlice, { initialState as authInitState } from '../../../src/store/auth/slice';
 import * as O from 'fp-ts/es6/Option';
+import { simpleUser } from '../../testutils/modelmocks/auth';
 
 describe('auth slice', () => {
 	it('setUserData', () => {
-		const authUser: AuthUser = {
-			username: 'user',
-			firstName: 'firstName',
-			lastName: 'lastName',
-			roles: []
-		};
-
 		const result = authSlice.reducer(
 			authInitState,
-			authSlice.actions.setUserData(O.some(authUser))
+			authSlice.actions.setUserData(O.some(simpleUser))
 		);
 		expect(result).toEqual({
 			...authInitState,
-			userData: O.some(authUser),
+			userData: O.some(simpleUser),
 			hasChecked: true
 		});
 	});

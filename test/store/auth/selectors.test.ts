@@ -1,19 +1,8 @@
 import authSlice from '../../../src/store/auth/slice';
-import { AuthUser } from '../../../src/types/auth';
 import * as O from 'fp-ts/es6/Option';
 import { isAuthorized } from '../../../src/store/auth/selectors';
-import {
-	combineReducers,
-	configureStore,
-	EnhancedStore
-} from '@reduxjs/toolkit';
-
-const authUser: AuthUser = {
-	username: 'user',
-	firstName: 'firstName',
-	lastName: 'lastName',
-	roles: []
-};
+import { combineReducers, configureStore, EnhancedStore } from '@reduxjs/toolkit';
+import { simpleUser } from '../../testutils/modelmocks/auth';
 
 const rootReducer = combineReducers({
 	auth: authSlice.reducer
@@ -29,7 +18,7 @@ describe('auth selectors', () => {
 
 	describe('isAuthorized', () => {
 		it('true', () => {
-			store.dispatch(authSlice.actions.setUserData(O.some(authUser)));
+			store.dispatch(authSlice.actions.setUserData(O.some(simpleUser)));
 			const result = isAuthorized(store.getState());
 			expect(result).toEqual(true);
 		});
