@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircularProgress } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import './Spinner.scss';
 
 const style = {
@@ -7,7 +7,7 @@ const style = {
 	height: '100%'
 };
 
-const Spinner = () => (
+const Spinner = (): JSX.Element => (
 	<div className="SpinnerRoot">
 		<CircularProgress style={style} />
 	</div>
