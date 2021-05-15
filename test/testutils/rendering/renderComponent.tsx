@@ -7,8 +7,9 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 
 export interface RenderConfig {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	component: ComponentType<any>;
+	preloadedState?: Partial<RootState>;
+	props?: any;
 }
 
 export interface RenderResult {
@@ -17,7 +18,7 @@ export interface RenderResult {
 }
 
 const renderComponent = async (config: RenderConfig): Promise<RenderResult> => {
-	const store = createStore();
+	const store = createStore(config.preloadedState ?? {});
 	const history = createMemoryHistory();
 	const CompToRender = config.component;
 	await waitFor(() =>
