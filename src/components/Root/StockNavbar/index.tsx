@@ -10,6 +10,8 @@ const StockNavbar = (): JSX.Element => {
 		(state) => state.auth.hasChecked
 	);
 
+	console.log('Rendering', isAuth, hasChecked); // TODO delete this
+
 	return (
 		<Navbar
 			isAuth={isAuth}
