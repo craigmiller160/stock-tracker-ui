@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { loadAuthUser } from '../../store/auth/actions';
 import Content from './Content';
+import Spinner from '../ui/Spinner';
 
 const Root = (): JSX.Element => {
 	const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const Root = (): JSX.Element => {
 	return (
 		<div>
 			<StockNavbar />
+			<Spinner />
 			{hasChecked && <Content />}
 		</div>
 	);
